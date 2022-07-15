@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Dance Champions</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <section class="wrapper">
+      <div class="container">
+        <div class="img__container">
+          <img
+            src="../../../assets/sdlogo.jpeg"
+            class="img">
+        </div>
+        <div class="content">
+          <h2 class="subtitle">Formulário de Inscrição</h2>
+          <h1 class="title">Just Dance Champions</h1>
+          <form [formGroup]="jogadorForm" (ngSubmit)="submit()">
+            <input formControlName="nome"  type="text" class="mail" placeholder="Nome Completo" required>
+            <input formControlName="apelido" type="text" class="mail" placeholder="Nome de Jogo ou Apelido*" required>
+            <input formControlName="data" type="date" class="mail" placeholder="Data de Nascimento" required>
+            <input formControlName="email" type="mail" class="mail" placeholder="E-mail" required [(ngModel)]="email">
+            <input formControlName="tel" type="number" class="mail" placeholder="Número de Telefone" required>
+            <input type="submit" value="INSCREVER-SE!" class="subscribe" [disabled]="!jogadorForm.valid">
+          </form>
+          <p class="text">
+            Just Dance Champions é um evento organizado pelo grupo <a
+              href="https://instagram.com/stardancephb">StarDance</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
